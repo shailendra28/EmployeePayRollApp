@@ -176,6 +176,7 @@ select{
     min-width: 140px;
     padding: 7px 7px;
     border: 1px solid #707070;
+    border-radius: 12px;
     cursor: pointer;
 }
 .submitButton {
