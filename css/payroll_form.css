@@ -17,7 +17,12 @@ body {
     align-items: center;
     border: 0px solid green;
 }
-
+error-output{
+    margin-left: 10px;
+    font-size: 12px;
+    font-style: italic;
+    color: red;
+}
 @media only screen and  (max-width: 960px) {
     .cancelButton{
         margin-left: 0px;
@@ -127,6 +132,7 @@ label {
     border-radius: 4px;
     resize: vertical;
 } 
+
 
 /* --UC-3--*/
 
