@@ -190,7 +190,7 @@ select{
     font-size: 20px;
     font-family: Roboto;
     letter-spacing: 0px;
-    color: #42515f;
+    color: green;
     opacity: 1;
     background-color: #f5f5f5;
     font-weight: 400;
@@ -202,5 +202,6 @@ select{
 .cancelButton {
    text-decoration: none;
    text-align: center;
+   color: red;
 }
 
