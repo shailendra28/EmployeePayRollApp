@@ -5,9 +5,11 @@ window.addEventListener("DOMContentLoaded", (event) => {
 const createInnerHtml = () => {
   const headerHtml = "<th></th><th>Name</th><th>Gender</th><th>Department</th>"+
                      "<th>Salar</th><th>Start Date</th><th>Actions</th>"
-let empPayrollData = createEmployeePayrollJSON()[1];
-  const innerHtml =`${headerHtml}
-    <tr>
+  let innerHtml = `${headerHtml}`;
+  let empPayrollList = createEmployeePayrollJSON();
+  for (const empPayrollData of empPayrollList) {
+  innerHtml = `${innerHtml} 
+  <tr>
       <td><img class="profile" alt=""src="${empPayrollData._profilePic}"></td>
       <td>${empPayrollData._name}</td>
       <td>${empPayrollData._gender}</td>
@@ -16,12 +18,13 @@ let empPayrollData = createEmployeePayrollJSON()[1];
       <td>${empPayrollData._statrDate}</td>
       <td>
         <img id="${empPayrollData._id}" onclick="remove(this)" alt="delete"
-          src="../assets/icons/delete-black-18dp.svg">
+             src="../assets/icons/delete-black-18dp.svg">
           <img id="${empPayrollData._id}" alt="edit" onclick="update(this)"
-            src="../assets/icons/create-black-18dp.svg">
+             src="../assets/icons/create-black-18dp.svg">
       </td>
     </tr>
   `;
+  }
   document.querySelector('#table-display').innerHTML = innerHtml;
  }
 
