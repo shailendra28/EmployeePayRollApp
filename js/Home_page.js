@@ -11,8 +11,7 @@ let empPayrollData = createEmployeePayrollJSON()[1];
       <td><img class="profile" alt=""src="${empPayrollData._profilePic}"></td>
       <td>${empPayrollData._name}</td>
       <td>${empPayrollData._gender}</td>
-      <td><div class='dept-level'>${empPayrollData._department[0]}</div>
-        <div class='dept-level'>${empPayrollData._department[1]}</div></td>
+      <td>${getDeptHtml(empPayrollData._department)}</td>
       <td>${empPayrollData._salary}</td>
       <td>${empPayrollData._statrDate}</td>
       <td>
@@ -39,11 +38,11 @@ let empPayrollData = createEmployeePayrollJSON()[1];
        _statrDate: '29 Oct 2019',
        _note: '',
        _id: new Date().getTime(),
-       _profilePic: '../assets/profile-image/Ellipse -2.png'
+       _profilePic: '../assets/profile-images/Ellipse -2.png'
       },
       {
         _name: 'Devika kumari Mathur',
-        _gender: 'male',
+        _gender: 'female',
         _department: [
           'Sales'
         ],
@@ -55,4 +54,12 @@ let empPayrollData = createEmployeePayrollJSON()[1];
       }
    ];
    return empPayrollListLocal;
+ }
+
+ const  getDeptHtml = (deptList) => {
+   let deptHtml = '';
+   for (const dept of deptList) {
+     deptHtml =`${deptHtml} <div class='dept-label'>${dept}</div>`
+   }
+   return deptHtml;
  }
